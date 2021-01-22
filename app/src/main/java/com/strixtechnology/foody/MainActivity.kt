@@ -23,19 +23,21 @@ class MainActivity : AppCompatActivity() {
         //binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
-        navController = findNavController(R.id.navHostFragment)
+        //After I Introduced this line of code to the end my app get killed before it gets onCreate
+        /**  navController = findNavController(R.id.navHostFragment)
         val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.recipesFragment,
-                R.id.favoriteRecipesFragment,
-                R.id.foodJokeFragment
-            )
+        setOf(
+        R.id.recipesFragment,
+        R.id.favoriteRecipesFragment,
+        R.id.foodJokeFragment
+        )
         )
         bottomNavigation.setupWithNavController(navController)
         setupActionBarWithNavController(navController,appBarConfiguration)
-    }
+        }
 
-    override fun onSupportNavigateUp(): Boolean {
+        override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+        }*/
     }
 }
