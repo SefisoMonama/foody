@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         //binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
-        //After I Introduced this line of code to the end my app get killed before it gets onCreate
+        //After I Introduced this line of code the app get killed before it gets onCreate
         /**  navController = findNavController(R.id.navHostFragment)
         val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(
         setOf(
