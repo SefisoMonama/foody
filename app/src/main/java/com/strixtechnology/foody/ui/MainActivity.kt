@@ -1,13 +1,13 @@
-package com.strixtechnology.foody
+package com.strixtechnology.foody.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
-import androidx.navigation.NavHost
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.strixtechnology.foody.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -23,13 +23,12 @@ class MainActivity : AppCompatActivity() {
         //binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
-        //After I Introduced this line of code the app get killed before it gets onCreate
         navController = findNavController(R.id.navHostFragment)
         val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(
                 setOf(
-                        R.id.recipesFragment,
-                        R.id.favoriteRecipesFragment,
-                        R.id.foodJokeFragment
+                    R.id.recipesFragment,
+                    R.id.favoriteRecipesFragment,
+                    R.id.foodJokeFragment
                 )
         )
         bottomNavigation.setupWithNavController(navController)
