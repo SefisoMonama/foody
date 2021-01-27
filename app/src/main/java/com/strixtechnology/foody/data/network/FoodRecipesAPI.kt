@@ -1,4 +1,4 @@
-package com.strixtechnology.foody
+package com.strixtechnology.foody.data.network
 
 import com.strixtechnology.foody.models.FoodRecipe
 import retrofit2.Response

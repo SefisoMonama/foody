@@ -1,4 +1,4 @@
-package com.strixtechnology.foody
+package com.strixtechnology.foody.util
 
 class Constants {
     companion object {
