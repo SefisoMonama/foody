@@ -10,7 +10,8 @@ import com.strixtechnology.foody.R
 
 class RecipesRowBinding {
     companion object{
-        @BindingAdapter("")
+        @BindingAdapter("loadImageFromUrl")
+        @JvmStatic
         fun loadImageFromUrl(imageView: ImageView, imageUrl: String){
             imageView.load(imageUrl){
                 crossfade(600)

@@ -16,6 +16,8 @@ import javax.inject.Singleton
 @InstallIn(ApplicationComponent::class)
 object NetworkModule {
 
+    @Singleton
+    @Provides
     fun provideHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
                 .readTimeout(15, TimeUnit.SECONDS)
