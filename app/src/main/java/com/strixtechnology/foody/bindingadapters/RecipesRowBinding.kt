@@ -15,6 +15,7 @@ class RecipesRowBinding {
         fun loadImageFromUrl(imageView: ImageView, imageUrl: String){
             imageView.load(imageUrl){
                 crossfade(600)
+                error(R.drawable.ic_error_placeholder)
             }
         }
 
@@ -29,6 +30,7 @@ class RecipesRowBinding {
         fun setNumberOfMinutes(textView: TextView, minutes: Int){
             textView.text = minutes.toString()
         }
+
         @BindingAdapter("applyVeganColor")
         @JvmStatic
         fun applyVeganColor(view: View, vegan: Boolean){
