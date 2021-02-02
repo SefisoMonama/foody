@@ -22,21 +22,26 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
 
      private object PreferenceKeys{
          val selectedMealType = preferencesKey<String>(PREFERENCES_MEAL_TYPE)
-         val selectedMealTypeId = preferencesKey<String>(PREFERENCES_MEAL_TYPE_ID)
+         val selectedMealTypeId = preferencesKey<Int>(PREFERENCES_MEAL_TYPE_ID)
          val selectedDietType = preferencesKey<String>(PREFERENCES_DIET_TYPE)
-         val selectedDietTypeId = preferencesKey<String>(PREFERENCES_DIET_TYPE_ID)
+         val selectedDietTypeId = preferencesKey<Int>(PREFERENCES_DIET_TYPE_ID)
      }
 
     private val dataStore: DataStore<Preferences> = context.createDataStore(
         name = PREFERENCES_NAME
     )
 
-    suspend fun saveMealAndDietType(mealType: String, mealTypeId: Int, dietType: String, dietTypeId: Int){
+    suspend fun saveMealAndDietType(
+            mealType: String,
+            mealTypeId: Int,
+            dietType: String,
+            dietTypeId: Int
+    ){
         dataStore.edit { preferences ->
             preferences[PreferenceKeys.selectedMealType] = mealType
-            preferences[PreferenceKeys.selectedMealTypeId] = mealTypeId.toString()
+            preferences[PreferenceKeys.selectedMealTypeId] = mealTypeId
             preferences[PreferenceKeys.selectedDietType] = dietType
-            preferences[PreferenceKeys.selectedDietTypeId] = dietTypeId.toString()
+            preferences[PreferenceKeys.selectedDietTypeId] = dietTypeId
         }
     }
 
@@ -55,9 +60,9 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
             val selectedDietTypeId = preferences[PreferenceKeys.selectedDietTypeId] ?: 0
             MealAndDietType(
                 selectedMealType,
-                selectedMealTypeId as Int,
+                selectedMealTypeId,
                 selectedDietType,
-                selectedDietTypeId as Int
+                selectedDietTypeId
             )
         }
 }

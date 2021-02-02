@@ -33,7 +33,7 @@ class RecipesViewModel @ViewModelInject constructor(
 
     val readMealAndDietType =  dataStoreRepository.readMealAndDietType
 
-    fun saveMealAndDiet(mealType: String, mealTypeId: Int, dietType: String, dietTypeId: Int) =
+    fun saveMealAndDietType(mealType: String, mealTypeId: Int, dietType: String, dietTypeId: Int) =
         viewModelScope.launch(Dispatchers.IO){
         dataStoreRepository.saveMealAndDietType(mealType, mealTypeId, dietType, dietTypeId)
     }
