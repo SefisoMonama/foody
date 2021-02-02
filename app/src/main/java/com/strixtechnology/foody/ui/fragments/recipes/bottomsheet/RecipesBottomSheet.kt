@@ -60,16 +60,21 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
             dietTypeChip = selectedDietType
         }
 
-        mView.apply_btn.setOnClickListener{
-            recipesViewModel.saveMealAndDietType(
-                    mealTypeChip,
-                    mealTypeChipId,
-                    dietTypeChip,
-                    dietTypeChipId
-            )
-            val action =
-                RecipesBottomSheetDirections.actionRecipesBottomSheetToRecipesFragment(true)
+        mView.apply_btn.setOnClickListener {
+
+            if (recipesViewModel.networkStatus) {
+                recipesViewModel.saveMealAndDietType(
+                        mealTypeChip,
+                        mealTypeChipId,
+                        dietTypeChip,
+                        dietTypeChipId
+                )
+                val action =
+                        RecipesBottomSheetDirections.actionRecipesBottomSheetToRecipesFragment(true)
                 findNavController().navigate(action)
+            } else {
+                recipesViewModel.showNetworkStatus()
+            }
         }
         return mView
     }

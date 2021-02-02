@@ -17,13 +17,17 @@ import com.strixtechnology.foody.R
 import com.strixtechnology.foody.adapters.RecipesAdapter
 import com.strixtechnology.foody.databinding.FragmentRecipesBinding
 import com.strixtechnology.foody.util.Constants.Companion.API_KEY
+import com.strixtechnology.foody.util.NetworkListener
 import com.strixtechnology.foody.util.NetworkResult
 import com.strixtechnology.foody.util.observeOnce
 import com.strixtechnology.foody.viewmodels.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_recipes.view.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
+@ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class RecipesFragment : Fragment() {
 
@@ -35,7 +39,9 @@ class RecipesFragment : Fragment() {
     private lateinit var recipesViewModel: RecipesViewModel
     private lateinit var mainViewModel: MainViewModel
     private val mAdapter by lazy { RecipesAdapter() }
-    private lateinit var mView: View
+    //private lateinit var mView: View
+
+    private lateinit var networkListener: NetworkListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,13 +60,24 @@ class RecipesFragment : Fragment() {
         binding.mainViewModel = mainViewModel
 
         setupRecyclerView()
-        readDatabase()
+    recipesViewModel.readBackOnline.observe(viewLifecycleOwner, {
+        recipesViewModel.backOnline = it
+    })
 
-        binding.recipesFab.setOnClickListener{
-            findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet)
+        lifecycleScope.launch {
+            networkListener = NetworkListener()
+            networkListener.checkNetworkAvailability(requireContext())
+                .collect { status ->
+                    Log.d("NetworkListener", status.toString())
+                    recipesViewModel.networkStatus = status
+                    recipesViewModel.showNetworkStatus()
+                    readDatabase()
+                }
         }
 
-
+        binding.recipesFab.setOnClickListener{
+                findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet)
+        }
         return binding.root
     }
 
