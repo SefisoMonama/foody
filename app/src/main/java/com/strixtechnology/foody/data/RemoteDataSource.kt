@@ -3,6 +3,7 @@ package com.strixtechnology.foody.data
 import com.strixtechnology.foody.data.network.FoodRecipesAPI
 import com.strixtechnology.foody.models.FoodRecipe
 import retrofit2.Response
+import retrofit2.http.Query
 import javax.inject.Inject
 
 class RemoteDataSource @Inject constructor(
@@ -10,5 +11,9 @@ class RemoteDataSource @Inject constructor(
 ){
     suspend fun getRecipes(queries: Map<String, String>): Response<FoodRecipe> {
         return foodRecipesAPI.getRecipes(queries)
+    }
+
+    suspend fun searchRecipes(searchQuery: Map<String, String>): Response<FoodRecipe>{
+        return foodRecipesAPI.searchRecipes(searchQuery)
     }
 }
