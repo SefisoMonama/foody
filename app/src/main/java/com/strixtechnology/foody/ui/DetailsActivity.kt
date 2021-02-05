@@ -12,6 +12,7 @@ import com.strixtechnology.foody.adapters.PagerAdapter
 import com.strixtechnology.foody.ui.fragments.ingredients.IngredientsFragment
 import com.strixtechnology.foody.ui.fragments.instructions.instructionsFragment
 import com.strixtechnology.foody.ui.fragments.overview.overviewFragment
+import com.strixtechnology.foody.util.Constants.Companion.RECIPE_RESULT_KEY
 import kotlinx.android.synthetic.main.activity_details.*
 
 class DetailsActivity : AppCompatActivity() {
@@ -38,7 +39,7 @@ class DetailsActivity : AppCompatActivity() {
         titles.add("Instructions")
 
         val resultBundle = Bundle()
-        resultBundle.putParcelable("recipeBundle", args.result)
+        resultBundle.putParcelable(RECIPE_RESULT_KEY, args.result)
 
         val adapter = PagerAdapter(
             resultBundle,
