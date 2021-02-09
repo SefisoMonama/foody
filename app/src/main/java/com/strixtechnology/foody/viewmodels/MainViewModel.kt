@@ -7,7 +7,8 @@ import android.net.NetworkCapabilities
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.strixtechnology.foody.data.Repository
-import com.strixtechnology.foody.data.database.RecipesEntity
+import com.strixtechnology.foody.data.database.entities.FavoriteEntity
+import com.strixtechnology.foody.data.database.entities.RecipesEntity
 import com.strixtechnology.foody.models.FoodRecipe
 import com.strixtechnology.foody.util.NetworkResult
 import kotlinx.coroutines.Dispatchers
@@ -20,11 +21,30 @@ class MainViewModel @ViewModelInject constructor(
 ) : AndroidViewModel(application) {
 
     /**ROOM DATABASE*/
-    val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readDatabase().asLiveData()
+    val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
+    val readFavoriteRecipes: LiveData<List<FavoriteEntity>> = repository.local.readFavoriteRecipes().asLiveData()
+
     private fun  insertRecipes(recipesEntity: RecipesEntity) =
             viewModelScope.launch(Dispatchers.IO) {
                 repository.local.insertRecipes(recipesEntity)
             }
+
+    fun insertFavoriteRecipe(favoriteEntity: FavoriteEntity) =
+        viewModelScope.launch (Dispatchers.IO){
+            repository.local.insertFavoriteRecipes(favoriteEntity)
+        }
+
+    fun deleteFavoriteRecipe(favoriteEntity: FavoriteEntity) =
+        viewModelScope.launch (Dispatchers.IO){
+            repository.local.deleteFavoriteRecipe(favoriteEntity)
+        }
+
+    private fun deleteAllFavoriteRecipe() =
+        viewModelScope.launch (Dispatchers.IO){
+            repository.local.deleteAllFavoriteRecipes()
+        }
+
+
     /**RETROFIT*/
      var recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
      var searchedRecipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()

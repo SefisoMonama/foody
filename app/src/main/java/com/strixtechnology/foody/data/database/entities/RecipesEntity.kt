@@ -1,4 +1,4 @@
-package com.strixtechnology.foody.data.database
+package com.strixtechnology.foody.data.database.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

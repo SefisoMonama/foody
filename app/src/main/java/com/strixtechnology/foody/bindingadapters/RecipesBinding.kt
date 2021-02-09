@@ -4,11 +4,9 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.strixtechnology.foody.data.database.RecipesDatabase
-import com.strixtechnology.foody.data.database.RecipesEntity
+import com.strixtechnology.foody.data.database.entities.RecipesEntity
 import com.strixtechnology.foody.models.FoodRecipe
 import com.strixtechnology.foody.util.NetworkResult
-import okhttp3.Response
 
 class RecipesBinding {
     companion object{
