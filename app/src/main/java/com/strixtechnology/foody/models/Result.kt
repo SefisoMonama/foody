@@ -20,7 +20,7 @@ data class Result(
     @SerializedName("glutenFree")
     val glutenFree: Boolean,
     @SerializedName("id")
-    val id: Int,
+    val recipeId: Int,
     @SerializedName("image")
     val image: String,
     @SerializedName("readyInMinutes")
@@ -41,6 +41,6 @@ data class Result(
     val vegetarian: Boolean,
     @SerializedName("veryHealthy")
     val veryHealthy: Boolean,
-    @SerializedName("id")
-    val recipeId: Int,
+    //@SerializedName("rId")
+    //val recipeId: Int,
 ): Parcelable

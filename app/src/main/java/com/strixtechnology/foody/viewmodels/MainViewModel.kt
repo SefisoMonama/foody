@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.strixtechnology.foody.data.Repository
@@ -84,6 +85,7 @@ class MainViewModel @ViewModelInject constructor(
                     offlineCacheRecipes(foodRecipe)
                 }
             }catch(e: Exception){
+                e.printStackTrace()
                 recipesResponse.value = NetworkResult.Error("Recipes not found.")
             }
         }else{
