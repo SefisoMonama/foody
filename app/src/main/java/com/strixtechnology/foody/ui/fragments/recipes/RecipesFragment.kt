@@ -88,6 +88,7 @@ class RecipesFragment() : Fragment(), SearchView.OnQueryTextListener, Parcelable
         return binding.root
     }
 
+
     private fun setupRecyclerView() {
         binding.recyclerView.adapter = mAdapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
