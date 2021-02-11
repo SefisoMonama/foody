@@ -40,4 +40,5 @@
     <string name="cheap">Cheap</string>
     <string name="name">Name</string>
     <string name="save_to_favorite">Save To Favorite</string>
+    <string name="no_favorite_recipe">No Favorite Recipe</string>
 </resources>
