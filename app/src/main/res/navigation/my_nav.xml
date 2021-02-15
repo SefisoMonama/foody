@@ -25,11 +25,15 @@
         android:id="@+id/favoriteRecipesFragment"
         android:name="com.strixtechnology.foody.ui.fragments.favorite.FavoriteRecipesFragment"
         android:label="Favorites"
-        tools:layout="@layout/fragment_favorite_recipes" />
+        tools:layout="@layout/fragment_favorite_recipes" >
+        <action
+            android:id="@+id/action_favoriteRecipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
     <fragment
         android:id="@+id/foodJokeFragment"
         android:name="com.strixtechnology.foody.ui.fragments.foodjoke.FoodJokeFragment"
-        android:label="Jokes"
+        android:label="Food Joke"
         tools:layout="@layout/fragment_food_joke" />
     <dialog
         android:id="@+id/recipesBottomSheet"

@@ -41,4 +41,9 @@
     <string name="name">Name</string>
     <string name="save_to_favorite">Save To Favorite</string>
     <string name="no_favorite_recipe">No Favorite Recipe</string>
+    <string name="delete_favorite_menu">Delete favorite menu</string>
+    <string name="delete_all">Delete All</string>
+    <string name="lorem_ipsum">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making </string>
+    <string name="error">Error</string>
+    <string name="share">Share</string>
 </resources>

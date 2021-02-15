@@ -16,9 +16,8 @@
     <color name="yellow">#FFC114</color>
     <color name="green">#00C980</color>
 
-    <!--LIGHT THEME -->
-    <color name="backgroundColor">@color/lightGray</color>
-
+    <!--DARK THEME -->
+    <color name="backgroundColor">@color/dark</color>
 
     //chip style
     <color name="checkedChipBackgroundColor">#206200EA</color>
@@ -28,13 +27,12 @@
 
     //Custom cardView Style
     <color name="strokeColor">@color/lightMediumGray</color>
-    <color name="cardBackgroundColor">@color/white</color>
+    <color name="cardBackgroundColor">@color/darker</color>
     <color name="cardBackgroundLightColor">#10D1D1D1</color>
-    <color name="titleColor">@color/darker</color>
+    <color name="titleColor">@color/mediumGray</color>
 
-    <color name="statusBarColor">@color/colorPrimaryDark</color>
+    <color name="statusBarColor">@color/black</color>
     <color name="contextualStatusBarColor">@color/darker</color>
     <color name="contextualActionBarColor">@color/dark</color>
     <color name="actionBarBackgroundColor">@color/colorPrimary</color>
-
 </resources>
