@@ -2,8 +2,8 @@ package com.strixtechnology.foody.util
 
 class Constants {
     companion object {
-        const val BASE_URL = "https://api.poonacular.com"
-        const val API_KEY = "5a95f35009843b49578c593f65d96d3"
+        const val BASE_URL = "https://api.spoonacular.com"
+        const val API_KEY = "65a95f35009843b49578c593f65d96d3"
         const val BASE_IMAGE_URL ="https://spoonacular.com/cdn/ingredients_100x100/"
 
         const val RECIPE_RESULT_KEY = "recipeBundle"
