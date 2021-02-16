@@ -21,19 +21,19 @@
             android:id="@+id/row_CardView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@color/cardBackgroundColor"
             app:cardCornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:strokeColor="@color/lightMediumGray"
+            app:strokeColor="@color/strokeColor"
             app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/cardBackgroundColor">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/favorite_recipe_imageView"

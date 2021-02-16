@@ -12,9 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.5"
-        android:background="@drawable/background_image_dark"
-        android:backgroundTint="@color/backgroundColor"
+        android:background="@drawable/ic_food_joke_background"
         tools:context=".ui.fragments.foodjoke.FoodJokeFragment">
 
         <com.google.android.material.card.MaterialCardView
@@ -24,6 +22,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:visibility="visible"
+            android:background="@color/cardBackgroundColor"
             readApiResponse3="@{mainViewModel.foodJokeResponse}"
             readDatabase3="@{mainViewModel.readFoodJoke}"
             app:cardCornerRadius="6dp"
@@ -32,7 +31,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:strokeColor="@color/lightMediumGray"
+            app:strokeColor="@color/strokeColor"
             app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout

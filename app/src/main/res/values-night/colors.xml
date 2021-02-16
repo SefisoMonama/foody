@@ -18,21 +18,30 @@
 
     <!--DARK THEME -->
     <color name="backgroundColor">@color/dark</color>
+    <color name="placeholderColor">@color/darker</color>
+    <color name="itemColor">@color/darkGray</color>
 
     //chip style
-    <color name="checkedChipBackgroundColor">#206200EA</color>
-    <color name="chipBackgroundColor">@color/lightGray</color>
-    <color name="checkedChipTextColor">@color/colorPrimary</color>
-    <color name="chipTextColor">@color/darkGray</color>
+    <color name="checkedChipBackgroundColor">@color/dark</color>
+    <color name="chipBackgroundColor">@color/darker</color>
+    <color name="checkedChipTextColor">@color/lightGray</color>
+    <color name="chipTextColor">@color/lightGray</color>
 
     //Custom cardView Style
-    <color name="strokeColor">@color/lightMediumGray</color>
+    <color name="strokeColor">@color/darkGray</color>
     <color name="cardBackgroundColor">@color/darker</color>
     <color name="cardBackgroundLightColor">#10D1D1D1</color>
     <color name="titleColor">@color/mediumGray</color>
+    <color name="descriptionColor">@color/mediumGray</color>
+
 
     <color name="statusBarColor">@color/black</color>
-    <color name="contextualStatusBarColor">@color/darker</color>
-    <color name="contextualActionBarColor">@color/dark</color>
-    <color name="actionBarBackgroundColor">@color/colorPrimary</color>
+    <color name="contextualStatusBarColor">@color/black</color>
+    <color name="contextualActionBarColor">@color/darker</color>
+    <color name="actionBarBackgroundColor">@color/darker</color>
+
+    //Custom Navigation view style
+    <color name="bottomNavBackground">@color/darker</color>
+    <color name="bottomNavItemColor">@color/colorAccent</color>
+
 </resources>
