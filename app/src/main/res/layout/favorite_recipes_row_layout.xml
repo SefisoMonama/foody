@@ -96,7 +96,7 @@
 
                 <TextView
                     android:id="@+id/favorite_heart_textView"
-                    setNumberOfLikes="@{favoriteEntity.result.aggregateLikes}"
+                    android:text="@{String.valueOf(favoriteEntity.result.aggregateLikes)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -117,7 +117,7 @@
 
                 <TextView
                     android:id="@+id/favorite_clock_textView"
-                    setNumberOfMinutes="@{favoriteEntity.result.readyInMinutes}"
+                    android:text="@{String.valueOf(favoriteEntity.result.readyInMinutes)}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
