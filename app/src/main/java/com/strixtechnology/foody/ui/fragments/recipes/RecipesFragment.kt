@@ -23,7 +23,6 @@ import com.strixtechnology.foody.util.NetworkResult
 import com.strixtechnology.foody.util.observeOnce
 import com.strixtechnology.foody.viewmodels.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_recipes.view.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -57,7 +56,7 @@ class RecipesFragment() : Fragment(), SearchView.OnQueryTextListener, Parcelable
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         // Inflate the layout for this fragment
 
         _binding= FragmentRecipesBinding.inflate(inflater, container, false)
@@ -71,7 +70,7 @@ class RecipesFragment() : Fragment(), SearchView.OnQueryTextListener, Parcelable
         recipesViewModel.backOnline = it
     })
 
-        lifecycleScope.launch {
+        lifecycleScope.launchWhenStarted {
             networkListener = NetworkListener()
             networkListener.checkNetworkAvailability(requireContext())
                 .collect { status ->
@@ -194,11 +193,10 @@ class RecipesFragment() : Fragment(), SearchView.OnQueryTextListener, Parcelable
         binding.recyclerView.hideShimmer()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
-
     override fun writeToParcel(parcel: Parcel, flags: Int) {
 
     }

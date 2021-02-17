@@ -3,9 +3,8 @@ package com.strixtechnology.foody.models
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import com.strixtechnology.foody.models.ExtendedIngredient
-import kotlinx.android.parcel.Parcelize
-import kotlinx.android.parcel.RawValue
+import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 
 @Parcelize
 data class Result(

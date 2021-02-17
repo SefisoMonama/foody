@@ -15,14 +15,6 @@
            <KeyAttribute
                motion:motionTarget="@+id/time_textView"
                motion:framePosition="100"
-               android:alpha="0" />
-           <KeyAttribute
-               motion:motionTarget="@+id/likes_textView"
-               motion:framePosition="100"
-               android:alpha="0.5" />
-           <KeyAttribute
-               motion:motionTarget="@+id/time_imageView"
-               motion:framePosition="100"
                android:alpha="0.5" />
        </KeyFrameSet>
         <OnSwipe

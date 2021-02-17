@@ -13,8 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.5"
-        android:background="@drawable/background_image_dark"
-        android:backgroundTint="@color/backgroundColor"
+        android:background="@drawable/ic_food_joke_background"
         tools:context=".ui.fragments.foodjoke.FoodJokeFragment">
 
         <com.google.android.material.card.MaterialCardView
