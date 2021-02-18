@@ -11,8 +11,8 @@
     </style>
 
     <style name="SplashScreenStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash_image</item>
         <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@drawable/splash_screen1</item>
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
@@ -20,6 +20,10 @@
         <item name="chipBackgroundColor">@color/chip_background_color</item>
         <item name="android:textColor">@color/chip_text_color</item>
         <item name="checkedIconTint">@color/chip_text_color</item>
+    </style>
+
+    <style name="mainActivityStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/statusBarColor</item>
     </style>
 
     <style name="DetailsActivityStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">

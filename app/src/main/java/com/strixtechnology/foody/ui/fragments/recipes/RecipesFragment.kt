@@ -1,5 +1,6 @@
 package com.strixtechnology.foody.ui.fragments.recipes
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
@@ -82,7 +83,11 @@ class RecipesFragment() : Fragment(), SearchView.OnQueryTextListener, Parcelable
         }
 
         binding.recipesFab.setOnClickListener{
+            if(recipesViewModel.networkStatus) {
                 findNavController().navigate(R.id.action_recipesFragment_to_recipesBottomSheet)
+            }else{
+                recipesViewModel.showNetworkStatus()
+            }
         }
         return binding.root
     }
@@ -117,7 +122,7 @@ class RecipesFragment() : Fragment(), SearchView.OnQueryTextListener, Parcelable
     private fun readDatabase() {
        lifecycleScope.launch{
            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner, {database ->
-               if(database.isNotEmpty() && args.backFromBottomSheet){
+               if(database.isNotEmpty() && !args.backFromBottomSheet){
                    Log.d("RecipesFragment","readDatabase called")
                    mAdapter.setData(database[0].foodRecipe)
                    hideShimmerEffect()
@@ -163,10 +168,7 @@ class RecipesFragment() : Fragment(), SearchView.OnQueryTextListener, Parcelable
                 is NetworkResult.Error -> {
                     hideShimmerEffect()
                     loadDataFromCache()
-                    Toast.makeText(requireContext(),
-                            response.message.toString(),
-                            Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(context, "No Internet Connection", Toast.LENGTH_SHORT).show()
                 }
                 is NetworkResult.Loading -> {
                     showShimmerEffect()

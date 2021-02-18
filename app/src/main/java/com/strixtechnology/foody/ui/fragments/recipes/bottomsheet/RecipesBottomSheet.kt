@@ -17,6 +17,7 @@ import com.strixtechnology.foody.databinding.RecipesBottomSheetBinding
 import com.strixtechnology.foody.util.Constants
 import com.strixtechnology.foody.util.Constants.Companion.DEFAULT_DIET_TYPE
 import com.strixtechnology.foody.util.Constants.Companion.DEFAULT_MEAL_TYPE
+import com.strixtechnology.foody.util.NetworkResult
 import com.strixtechnology.foody.viewmodels.RecipesViewModel
 import java.util.*
 
@@ -28,9 +29,10 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
     private val binding get() = _binding!!
 
     private var mealTypeChip = DEFAULT_MEAL_TYPE
+    private var mealTypeChipId = 0
     private var dietTypeChip = DEFAULT_DIET_TYPE
     private var dietTypeChipId = 0
-    private var mealTypeChipId = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,8 +55,8 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
         binding.mealTypeChipGroup.setOnCheckedChangeListener{group, selectedChipId ->
             val chip = group.findViewById<Chip>(selectedChipId)
             val selectedMealType = chip.text.toString().toLowerCase(Locale.ROOT)
-            mealTypeChipId = selectedChipId
             mealTypeChip = selectedMealType
+            mealTypeChipId = selectedChipId
         }
 
         binding.dietTypeChipGroup.setOnCheckedChangeListener { group, selectedChipId ->
@@ -65,8 +67,6 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
         }
 
         binding.applyBtn.setOnClickListener {
-
-            if (recipesViewModel.networkStatus) {
                 recipesViewModel.saveMealAndDietType(
                         mealTypeChip,
                         mealTypeChipId,
@@ -76,10 +76,7 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
                 val action =
                         RecipesBottomSheetDirections.actionRecipesBottomSheetToRecipesFragment(true)
                 findNavController().navigate(action)
-            } else {
-                recipesViewModel.showNetworkStatus()
             }
-        }
         return binding.root
     }
 

@@ -34,7 +34,6 @@
     <color name="titleColor">@color/mediumGray</color>
     <color name="descriptionColor">@color/mediumGray</color>
 
-
     <color name="statusBarColor">@color/black</color>
     <color name="contextualStatusBarColor">@color/black</color>
     <color name="contextualActionBarColor">@color/darker</color>
