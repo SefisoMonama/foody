@@ -39,5 +39,5 @@
 <li>Share Data with Other Apps
 <li>Create Modal Bottom Sheet
 <li>Nice looking UI Design
-<li>Migration ( to kotlin-android-extensions plugin to viewBinding)
+<li>Migration ( from kotlin-android-extensions plugin to viewBinding)
 </ul>
