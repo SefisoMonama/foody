@@ -1,4 +1,4 @@
-<h2>Foody App(Online Course with Udemy)</h2>
+<h2>Foody App (Online Course with Udemy)</h2>
 
 <p>Course requirement was to build the foody app using android studio with kotlin</p><hr>
 
