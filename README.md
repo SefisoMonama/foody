@@ -41,3 +41,6 @@
 <li>Nice looking UI Design
 <li>Migration ( from kotlin-android-extensions plugin to viewBinding)
 </ul>
+
+<h3>Link to course</h3><hr>
+<a href=https://www.udemy.com/course/modern-food-recipes-app-android-development-with-kotlin>Modern Food Recipes App - Android Development with Kotlin</a>
