@@ -1,6 +1,6 @@
-<h2>Foody App (Online Course with Udemy)</h2>
+##Foody App (Online Course with Udemy)
 
-<p>Course requirement was to build the foody app using android studio with kotlin</p><hr>
+Course requirement was to build the foody app using android studio with kotlin<hr>
 
 <h4>These are the following topics we covered in the process of creating the application</h4>
 
